@@ -3,7 +3,7 @@ guide <- "Legal 500 US 2019"
 
 
 
-df_legal <-
+df_data <-
   df_legal_raw %>% unite(
     "directory_practice",
     c("legal_500_practice_area", "specific_practice_area"),
