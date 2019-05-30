@@ -18,3 +18,10 @@ df_historical_rankings <- RMySQL::fetch(result, n = -1)
 
 # get current rankings ----------------------------------------------------
 
+
+# get dictionaries --------------------------------------------------------
+file_path_practice <- "./data/dictionaries/practice_dict.csv"
+file_path_regions <- "./data/dictionaries/regions_dict.csv"
+
+df_practice_dict <- read.csv(file_path_practice, stringsAsFactors = F, sep = ";")
+df_regions_dict <- read.csv(file_path_regions, stringsAsFactors = F, sep = ";")
