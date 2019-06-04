@@ -23,5 +23,5 @@ df_historical_rankings <- RMySQL::fetch(result, n = -1)
 file_path_practice <- "./data/dictionaries/practice_dictionary_final_mac.csv"
 file_path_regions <- "./data/dictionaries/regions_dict.csv"
 
-df_practice_dict <- read.csv(file_path_practice, stringsAsFactors = F, sep = ";")
-df_regions_dict <- read.csv(file_path_regions, stringsAsFactors = F, sep = ";")
+df_practice_dict <- unique(read.csv(file_path_practice, stringsAsFactors = F, sep = ";"))
+df_regions_dict <- unique(read.csv(file_path_regions, stringsAsFactors = F, sep = ";"))
