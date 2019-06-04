@@ -15,7 +15,7 @@ df_data <-
     directory_region = country,
     ranking = if_else(
       table_type == "Recommended firms",
-      paste0("Tire ", legal_500_tier_ranking),
+      paste0("Tier ", legal_500_tier_ranking),
       table_type
     )
   ) %>% select(
