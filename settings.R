@@ -90,3 +90,30 @@ year_publisged_dict <- c(
   'Legal 500 Asia'
 )
 
+columns_list_csv <- c(
+  
+  "Year",
+  "Year published",
+  "Publisher",
+  "Guide",
+  "Level",
+  "Firm name",
+  "Lawyer name",
+  "Is part of Dentons",
+  "Ranking",
+  "Ranking aggregated",
+  "Directory practice",
+  "Dentons practice",
+  "Multipractice",
+  "Dentons sector",
+  "Directory region",
+  "Dentons region",
+  "Dentons subregion",
+  "Dentons country",
+  "Dentons state",
+  "Dentons city",
+  "guide_agg",
+  "max_year",
+  "Is ranking current",
+  "Firm agg"
+)
