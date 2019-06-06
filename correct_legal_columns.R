@@ -4,11 +4,7 @@ guide_agg <- "Legal 500 US"
 
 
 df_data <-
-  df_legal_raw %>% unite(
-    "directory_practice",
-    c("legal_500_practice_area", "specific_practice_area"),
-    sep = ": "
-  ) %>% mutate(
+  df_legal_raw %>% mutate(
     publisher = publisher,
     guide_agg = guide_agg,
     guide = paste0(guide_agg, " ", year),
@@ -17,6 +13,11 @@ df_data <-
       table_type == "Recommended firms",
       paste0("Tier ", legal_500_tier_ranking),
       table_type
+    ),
+    directory_practice = if_else(
+      table_type == "Recommended firms",
+      paste(legal_500_practice_area, table, sep = ": "),
+      paste(legal_500_practice_area, specific_practice_area, sep = ": ")
     )
   ) %>% select(
     year,
