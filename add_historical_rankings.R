@@ -12,3 +12,4 @@ df_data <-
                   is_ranking_current = if_else(year == max_year, 1, 0),
                   is_ranking_current = if_else(as.integer(is_ranking_current) == 1, "Yes", "No")
                   )
+
