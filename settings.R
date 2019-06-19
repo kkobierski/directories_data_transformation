@@ -6,6 +6,15 @@ db_pwd <- pwd[[1]][2]
 db_address <- pwd[[1]][3]
 db_name <- pwd[[1]][4]
 
+conn <-
+  RMySQL::dbConnect(
+    drv = MySQL(),
+    username = db_usr,
+    password = db_pwd,
+    host = db_address,
+    dbname = db_name,
+    port = 3306
+  )
 
 # constants ---------------------------------------------------------------
 
