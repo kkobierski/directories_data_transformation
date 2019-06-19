@@ -3,7 +3,7 @@ df_data <-
   df_data %>% mutate(is_part_of_dentons = if_else(firm_name %in% firms_list_dentons, 1, 0),
                      year_published = if_else(guide_agg %in% year_publisged_dict, as.integer(year-1), year),
                      ranking_aggregated = if_else(publisher == "Legal 500",
-                                                   gsub("Tire ", "", ranking),
+                                                   gsub("Tier ", "", ranking),
                                                    gsub("Band ", "", ranking)
                                                    ),
                      level = if_else(lawyer_name == "", "Firm level", "Individual level")
