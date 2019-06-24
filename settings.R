@@ -126,3 +126,10 @@ columns_list_csv <- c(
   "Is ranking current",
   "Firm agg"
 )
+
+
+# fixed var ---------------------------------------------------------------
+
+year_sys <- year(Sys.Date())
+publisher_chambers <- "Chambers and Partners"
+guide_chambers <- "Chambers"

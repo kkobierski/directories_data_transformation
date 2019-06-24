@@ -1,4 +1,4 @@
-df_practice_dict_legal <- df_practice_dict %>% filter(directory == "Legal 500") %>% select(-directory)
+df_practice_dict_legal <- df_practice_dict %>% filter(directory == publisher) %>% select(-directory)
 
 df_data <- dplyr::left_join(x = df_data,
                             y = df_practice_dict_legal,
