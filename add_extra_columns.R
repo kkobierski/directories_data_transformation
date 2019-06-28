@@ -20,3 +20,5 @@ df_data <-
                         if_else(firm_name %like% 'Norton Rose Fulbright', 'Norton Rose Fulbright', 
                         if_else(firm_name %like% 'Hogan Lovells', 'Hogan Lovells',
                         firm_name)))))))))
+
+

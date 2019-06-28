@@ -6,6 +6,8 @@ df_data <-
   ungroup() %>% 
   mutate(is_ranking_current = if_else(year == max_year, 1, 0))
 
+df_data_to_upload <- df_data
+
 df_data <- 
   df_data %>% mutate(
                   is_part_of_dentons = if_else(as.integer(is_part_of_dentons) == 1, "Yes", "No"),

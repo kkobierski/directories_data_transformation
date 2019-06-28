@@ -1,5 +1,5 @@
 source("load_packages.R")
-publisher <- "Legal 500"
+
 tic()
 source("settings.R")
 source("get_data.R")

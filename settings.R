@@ -1,4 +1,9 @@
 
+# run script for ----------------------------------------------------------
+
+#publisher <- "Legal 500"
+publisher <- "Chambers and Partners"
+
 # db creds ----------------------------------------------------------------
 pwd <- read.csv("~/Documents/projects/pwd/pwd.txt", header = F, stringsAsFactors = F)
 db_usr <- pwd[[1]][1]
@@ -49,7 +54,8 @@ firms_list_dentons <-
     "Delany Law",
     "Dinner Martin",
     "Alston Hunt Floyd & Ing",
-    "Kampala Associated Advocates"
+    "Kampala Associated Advocates",
+    "MawereSibanda"
     
   )
 
@@ -127,6 +133,32 @@ columns_list_csv <- c(
   "Firm agg"
 )
 
+fields_types_directories_mysql <- list(
+  "year int(4),
+  year_published int(4),
+  publisher varchar(32),
+  guide varchar(32),
+  level varchar(32),
+  firm_name varchar(128),
+  lawyer_name varchar(255),
+  is_part_of_dentons int(1),
+  ranking varchar(32),
+  ranking_aggregated varchar(32),
+  directory_practice varchar (255),
+  dentons_practice varchar(255),
+  multipractice varchar(255),
+  dentons_sector varchar(255),
+  directory_region varchar(128),
+  dentons_region varchar(16),
+  dentons_subregion varchar(64),
+  dentons_country varchar(64),
+  dentons_state varchar(64),
+  dentons_city varchar(64),
+  guide_agg varchar(32),
+  max_year int(4),
+  is_ranking_current int(1),
+  firm_agg varchar(32)
+  ")
 
 # fixed var ---------------------------------------------------------------
 
