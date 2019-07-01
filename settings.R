@@ -1,6 +1,18 @@
 
 # run script for ----------------------------------------------------------
 
+choose_publisher <- function(publisher){
+  if(publisher == "c"){
+    source("get_chambers.R")
+    source("correct_chambers_columns.R")
+  } else if(publisher == "l"){
+    source("get_legal500.R")
+    source("correct_legal_columns.R")
+  } else{
+    print("Incorrect publisher fool!")
+  }
+}
+
 #publisher <- "Legal 500"
 publisher <- "Chambers and Partners"
 

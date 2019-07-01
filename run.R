@@ -4,15 +4,7 @@ tic()
 source("settings.R")
 source("get_data.R")
 
-if(publisher == "Chambers and Partners"){
-  source("get_chambers.R")
-  source("correct_chambers_columns.R")
-} else if(publisher == "Legal 500"){
-  source("get_legal500.R")
-  source("correct_legal_columns.R")
-} else{
-  print("Incorrect publisher fool!")
-}
+choose_publisher("c")
 
 source("match_practices.R")
 source("match_regions.R")
