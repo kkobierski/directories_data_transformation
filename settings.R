@@ -9,7 +9,7 @@ choose_publisher <- function(publisher){
     source("get_legal500.R")
     source("correct_legal_columns.R")
   } else{
-    print("Incorrect publisher fool!")
+    stop("Incorrect publisher fool!")
   }
 }
 
