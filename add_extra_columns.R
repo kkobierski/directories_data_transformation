@@ -11,7 +11,7 @@ df_data <-
 
 df_data <-
   df_data %>% mutate(firm_agg = 
-                        if_else(is_part_of_dentons == 'Yes', "Dentons", 
+                        if_else(is_part_of_dentons == 1, "Dentons", 
                         if_else(firm_name %like% 'Baker', 'Baker McKenzie',
                         if_else(firm_name %like% 'CMS', 'CMS',
                         if_else(firm_name %like% 'DLA Piper', 'DLA Piper', 
