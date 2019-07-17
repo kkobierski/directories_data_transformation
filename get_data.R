@@ -3,7 +3,7 @@
 get_historical_data <- 'Select * from directories.directories;'
 result <- RMySQL::dbSendQuery(conn, get_historical_data)
 df_historical_rankings <- RMySQL::fetch(result, n = -1)
- 
+RMySQL::dbDisconnect(conn) 
 
 # get current rankings ----------------------------------------------------
 

@@ -5,6 +5,7 @@ guide_agg <- "Legal 500 US"
 
 df_data <-
   df_legal_raw %>% mutate(
+    is_part_of_dentons = if_else(firm_name %in% firms_list_dentons, 1, 0),
     publisher = publisher,
     guide_agg = guide_agg,
     guide = paste0(guide_agg, " ", year),
@@ -28,12 +29,13 @@ df_data <-
     directory_practice,
     directory_region,
     ranking,
-    lawyer_name
+    lawyer_name,
+    is_part_of_dentons
   )
 
 df_data$lawyer_name <- gsub(" - ", "", df_data$lawyer_name)
 
-#### resolve issue with CMS, currently you are selecting only one value, need to make sure you extract all of the names variations. LAternatively use IDs
+#### resolve issue with CMS, currently you are selecting only one value, need to make sure you extract all of the names variations. Aternatively use IDs
 df_data <-
   df_data %>% filter(
     firm_name %in% firms_list_competition |
