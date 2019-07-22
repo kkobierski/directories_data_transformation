@@ -1,3 +1,4 @@
+source("settings.R")
 
 # create backup -----------------------------------------------------------
 insert_to_backup <- "insert into directories.directories_backup select * from directories.directories;"
@@ -21,3 +22,4 @@ RMySQL::dbWriteTable(
   field.types = fields_types_directories_mysql
 ) 
 
+RMySQL::dbDisconnect(conn) 
