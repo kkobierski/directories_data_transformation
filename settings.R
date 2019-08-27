@@ -177,3 +177,10 @@ fields_types_directories_mysql <- list(
 year_sys <- year(Sys.Date())
 publisher_chambers <- "Chambers and Partners"
 guide_chambers <- "Chambers"
+
+
+# functions ---------------------------------------------------------------
+
+right <- function(x, n){
+  substr(x, nchar(x)-n+1, nchar(x))
+}
