@@ -7,8 +7,9 @@ df_data <-
 df_data$firm_id <- as.integer(df_data$firm_id)
 df_data$publication_id <- as.integer(df_data$publication_id)
 
+
 df_chambers_publications_dict_s <-
-  df_chambers_publications_dict %>% filter(active == "True") %>% select(publicationTypeId, publicationTypeDescription)
+  df_chambers_publications_dict %>% filter(active == "TRUE") %>% select(publicationTypeId, publicationTypeDescription, description)
 
 df_data <- dplyr::left_join(df_data,
                             df_chambers_publications_dict_s,
@@ -21,12 +22,12 @@ df_data <-dplyr::left_join(df_data,
                            by = c("firm_id"))
 
 df_data <- df_data %>% mutate(
-  year = year_sys,
+  year = as.integer(right(description,4)),
   ranking = rank_desc,
   ranking_agg = if_else(rank_desc %like% "Band", gsub("Band ", "", rank_desc), rank_desc),
   publisher = publisher_chambers,
-  guide_agg = paste(guide_chambers, publicationTypeDescription, sep = " "),
-  guide = paste(guide_chambers, publicationTypeDescription, year_sys, sep = " "),
+  guide_agg = paste("Chambers", publicationTypeDescription, sep = " "),
+  guide = paste("Chambers", description, sep = " "),
   directory_practice = practice_desc,
   directory_region = loc_desc,
   lawyer_name = person_name

@@ -1,3 +1,4 @@
+df_data[df_data == "nan"] <- NA
 df_to_save <- df_data
 colnames(df_to_save) <- columns_list_csv
 

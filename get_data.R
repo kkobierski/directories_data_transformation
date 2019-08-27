@@ -16,5 +16,5 @@ file_path_chambers_firms <-"./data/dictionaries/chambers_firms_dict.csv"
 
 df_practice_dict <- unique(read.csv(file_path_practice, stringsAsFactors = F, sep = ";"))
 df_regions_dict <- unique(read.csv(file_path_regions, stringsAsFactors = F, sep = ";"))
-df_chambers_publications_dict <- unique(read.csv(file_path_chambers_publications, stringsAsFactors = F, sep = ","))
+df_chambers_publications_dict <- unique(read.csv(file_path_chambers_publications, stringsAsFactors = F, sep = ";"))
 df_chambers_firms_dict <- unique(read.csv(file_path_chambers_firms, stringsAsFactors = F, sep = ";"))

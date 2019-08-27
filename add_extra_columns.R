@@ -6,7 +6,7 @@ df_data <-
                                                    gsub("Tier ", "", ranking),
                                                    gsub("Band ", "", ranking)
                                                    ),
-                    level = if_else(lawyer_name == "", "Firm level", "Individual level")
+                    level = if_else(lawyer_name == "nan", "Firm level", "Individual level")
                      )
 
 df_data <-
