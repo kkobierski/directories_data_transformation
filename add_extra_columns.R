@@ -6,7 +6,7 @@ df_data <-
                                                    gsub("Tier ", "", ranking),
                                                    gsub("Band ", "", ranking)
                                                    ),
-                    level = if_else(lawyer_name == "nan", "Firm level", "Individual level")
+                    level = if_else((lawyer_name == "nan" | lawyer_name ==""), "Firm level", "Individual level")
                      )
 
 df_data <-
@@ -22,3 +22,12 @@ df_data <-
                         firm_name)))))))))
 
 
+df_data <-
+  df_data %>% mutate(
+    special_ranking = if_else(
+    directory_practice %like% "Elite", "Elite",
+    if_else(
+      directory_practice %like% "Highly Regarded", "Highly Regarded",
+      "Regular")),
+  is_top_ranking = if_else(ranking_aggregated %in% top_rankings_list, 1, 0)
+  )

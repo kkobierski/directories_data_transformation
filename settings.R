@@ -67,7 +67,20 @@ firms_list_dentons <-
     "Dinner Martin",
     "Alston Hunt Floyd & Ing",
     "Kampala Associated Advocates",
-    "MawereSibanda"
+    "MawereSibanda",
+    #newly added firms - check names in legal 500 data
+    "Lee International",
+    "Gustavo Zacapa y Asociados, Abogados & Notarios",
+    "Kensington Swan",
+    "Rattagan Macchiavello Arocena",
+    "Jimenez de Arechaga, Viana + Brause",
+    "Jimenez de Arechaga, Viana & Brause",
+    #5african firms
+    "LEAD Advogados",
+    "Sayarh & Menjra",
+    "Fernanda Lopes & Associados Advogados",
+    "Kyagaba and Otatiina Advocates",
+    "Eric Silwamba, Jalasi and Linyama Legal Practitioners"
     
   )
 
@@ -142,7 +155,9 @@ columns_list_csv <- c(
   "guide_agg",
   "max_year",
   "Is ranking current",
-  "Firm agg"
+  "Firm agg",
+  "Special ranking",
+  "Is top ranking"
 )
 
 fields_types_directories_mysql <- list(
@@ -169,8 +184,22 @@ fields_types_directories_mysql <- list(
   guide_agg varchar(32),
   max_year int(4),
   is_ranking_current int(1),
-  firm_agg varchar(32)
+  firm_agg varchar(32),
+  special_ranking varchar(32),
+  is_top_ranking int(1)
   ")
+
+top_rankings_list <-
+  c(
+    "1",
+    "2",
+    "Eminent Practitioner",
+    "Ranked Individual",
+    "Senior Statespeople",
+    "Star Associate",
+    "Star Individual",
+    "Leading Individuals"
+  )
 
 # fixed var ---------------------------------------------------------------
 
