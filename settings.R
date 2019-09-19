@@ -52,6 +52,7 @@ firms_list_dentons <-
     "Vella Pugliese Buosi e Guidoni Advogados",
     "Maclay Murray & Spens LLP",
     "Gallo Barrios Pickmann Abogados",
+    "Dentons Peru",
     "Vella Pugliese Buosi e Guidoni Advogados",
     "McKenna Long & Aldridge LLP",
     "Dentons Cardenas & Cardenas",
@@ -70,6 +71,7 @@ firms_list_dentons <-
     "MawereSibanda",
     #newly added firms - check names in legal 500 data
     "Lee International",
+    "Lee International IP & Law Group",
     "Gustavo Zacapa y Asociados, Abogados & Notarios",
     "Kensington Swan",
     "Rattagan Macchiavello Arocena",
@@ -78,6 +80,7 @@ firms_list_dentons <-
     #5african firms
     "LEAD Advogados",
     "Sayarh & Menjra",
+    "Sayarh & Menjra Law Firm",
     "Fernanda Lopes & Associados Advogados",
     "Kyagaba and Otatiina Advocates",
     "Eric Silwamba, Jalasi and Linyama Legal Practitioners"
@@ -198,7 +201,9 @@ top_rankings_list <-
     "Senior Statespeople",
     "Star Associate",
     "Star Individual",
-    "Leading Individuals"
+    "Leading Individuals",
+    "Leading individuals",
+    "Leading Individual"
   )
 
 # fixed var ---------------------------------------------------------------
