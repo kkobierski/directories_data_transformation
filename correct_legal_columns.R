@@ -1,5 +1,5 @@
 publisher <- "Legal 500"
-guide_agg <- "Legal 500 Latin America"
+guide_agg <- "Legal 500 UK"
 
 colnames(df_legal_raw) <- gsub("table_type.*", "table_type", colnames(df_legal_raw))
 
@@ -44,6 +44,7 @@ df_data <-
   )
 
 df_data$lawyer_name <- gsub(" - ", "", df_data$lawyer_name)
+df_data$lawyer_name <- gsub("-", "", df_data$lawyer_name)
 
 #### resolve issue with CMS, currently you are selecting only one value, need to make sure you extract all of the names variations. Aternatively use IDs
 df_data <-
