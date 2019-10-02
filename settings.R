@@ -83,7 +83,8 @@ firms_list_dentons <-
     "Sayarh & Menjra Law Firm",
     "Fernanda Lopes & Associados Advogados",
     "Kyagaba and Otatiina Advocates",
-    "Eric Silwamba, Jalasi and Linyama Legal Practitioners"
+    "Eric Silwamba, Jalasi and Linyama Legal Practitioners",
+    "Fisher Jeffries"
     
   )
 
@@ -130,7 +131,8 @@ year_publisged_dict <- c(
   'Chambers FinTech',
   'Chambers Canada',
   'Legal 500 Canada',
-  'Legal 500 Asia'
+  'Legal 500 Asia',
+  'Legal 500 UK'
 )
 
 columns_list_csv <- c(
