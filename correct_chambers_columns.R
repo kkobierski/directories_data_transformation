@@ -27,7 +27,7 @@ df_data <- df_data %>% mutate(
   ranking_agg = if_else(rank_desc %like% "Band", gsub("Band ", "", rank_desc), rank_desc),
   publisher = publisher_chambers,
   guide_agg = paste("Chambers", publicationTypeDescription, sep = " "),
-  guide = paste("Chambers", description, sep = " "),
+  guide = if_else(description %like% "Chambers",description,  paste("Chambers", description, sep = " ")),
   directory_practice = practice_desc,
   directory_region = loc_desc,
   lawyer_name = person_name
