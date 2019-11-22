@@ -42,13 +42,13 @@ firms_list_dentons <-
     "Dentons Canada LLP",
     'Balcıoğlu Selçuk Akman Keki',
     'Balcioglu Selcuk Akman Keki',
-    "Corpus Legal Practitioners",
+    # "Corpus Legal Practitioners",
     "Dacheng Law Offices, LLP" ,
     'Rodyk & Davidson LLP',
-    "Hadj-Hamou/Djouadi",
-    "JLD & MB Legal Consultancy",
-    'MC&A',
-    "Tumi Law Firm",
+    # "Hadj-Hamou/Djouadi",
+    # "JLD & MB Legal Consultancy",
+    # 'MC&A',
+    # "Tumi Law Firm",
     "Vella Pugliese Buosi e Guidoni Advogados",
     "Maclay Murray & Spens LLP",
     "Gallo Barrios Pickmann Abogados",
@@ -67,7 +67,7 @@ firms_list_dentons <-
     "Delany Law",
     "Dinner Martin",
     "Alston Hunt Floyd & Ing",
-    "Kampala Associated Advocates",
+    # "Kampala Associated Advocates",
     "MawereSibanda",
     #newly added firms - check names in legal 500 data
     "Lee International",
@@ -84,7 +84,8 @@ firms_list_dentons <-
     "Fernanda Lopes & Associados Advogados",
     "Kyagaba and Otatiina Advocates",
     "Eric Silwamba, Jalasi and Linyama Legal Practitioners",
-    "Fisher Jeffries"
+    "Fisher Jeffries",
+    "Bingham Greenbaum and Cohen & Grigsby"
     
   )
 
@@ -199,13 +200,27 @@ top_rankings_list <-
     "1",
     "2",
     "Eminent Practitioner",
+    "Eminent practitioner",
+    "Eminent Practitioners",
+    "Eminent practitioners",
     "Ranked Individual",
+    "Ranked individual",
     "Senior Statespeople",
     "Star Associate",
+    "Star Associates",
     "Star Individual",
+    "Star Individuals",
     "Leading Individuals",
     "Leading individuals",
-    "Leading Individual"
+    "Leading Individual",
+    "Leading individual",
+    "Next generation lawyers",
+    "Next Generation Lawyers",
+    "Next Generation Partners",
+    "Next generation partners",
+    "Hall of fame",
+    "Hall of Fame"
+    
   )
 
 # fixed var ---------------------------------------------------------------
@@ -219,4 +234,11 @@ guide_chambers <- "Chambers"
 
 right <- function(x, n){
   substr(x, nchar(x)-n+1, nchar(x))
+}
+
+
+simpleText <- function(string){
+  string <- tolower(string)
+  substring(string,1,1) <- toupper(substring(string,1,1))
+  return(string)
 }
