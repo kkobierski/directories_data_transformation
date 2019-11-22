@@ -29,5 +29,5 @@ df_data <-
     if_else(
       directory_practice %like% "Highly Regarded", "Highly Regarded",
       "Regular")),
-  is_top_ranking = if_else(ranking_aggregated %in% top_rankings_list, 1, 0)
+  is_top_ranking = if_else(ranking_aggregated %in% top_rankings_list | special_ranking %in% c('Elite', 'Highly Regarded'), 1, 0)
   )
