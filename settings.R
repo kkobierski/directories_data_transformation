@@ -125,10 +125,11 @@ firms_list_competition <- c(
   "Mohammed Al-Ghamdi Law Firm in association with Norton Rose Fulbright US LLP"
 )
 
-year_publisged_dict <- c(
+year_published_dict <- c(
   'Chambers UK',
   'Chambers Latin America',
   'Chambers Asia',
+  'Chambers Asia Pacific',
   'Chambers FinTech',
   'Chambers Canada',
   'Legal 500 Canada',
