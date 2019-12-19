@@ -7,3 +7,5 @@ data/
 test.R
 reports/
 chambers_rankings_hierarchy.csv
+legal500_canada_2020_final.csv
+*.csv
