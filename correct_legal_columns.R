@@ -1,7 +1,15 @@
 publisher <- "Legal 500"
 guide_agg <- "Legal 500 UK"
 
-colnames(df_legal_raw) <- gsub("table_type.*", "table_type", colnames(df_legal_raw))
+colnames(df_legal_raw) <-
+  gsub("table_type.*", "table_type", colnames(df_legal_raw))
+
+# df_legal_raw$table_type <-
+#   gsub(
+#     "Next Generation Lawyers",
+#     "Next Generation Partners",
+#     df_legal_raw$table_type
+#   )
 
 df_data <-
   df_legal_raw %>% mutate(
@@ -9,21 +17,16 @@ df_data <-
     publisher = publisher,
     guide_agg = guide_agg,
     guide = paste0(guide_agg, " ", year),
-    directory_region = country,
+    directory_region = chapter,
     ranking = if_else(
       table_type == "Recommended firms",
       paste0("Tier ", legal_500_tier_ranking),
       table_type
     ),
-    # directory_practice = if_else(
-    #   table_type == "Recommended firms",
-    #   paste(legal_500_practice_area, table, sep = ": "),
-    #   paste(legal_500_practice_area, specific_practice_area, sep = ": ")
-    # ),
     directory_practice = if_else(
       table_type == "Recommended firms",
               if_else(legal_500_practice_area == specific_practice_area,
-                      table,
+                      legal_500_practice_area,
                       paste(legal_500_practice_area, specific_practice_area, sep = ": ")
               ),
               if_else(legal_500_practice_area == specific_practice_area,
