@@ -1,7 +1,7 @@
 
 df_data <-
   df_data %>% mutate(
-                    year_published = if_else(guide_agg %in% year_publisged_dict, as.integer(year-1), year),
+                    year_published = if_else(guide_agg %in% year_published_dict, as.integer(year-1), year),
                     ranking_aggregated = if_else(publisher == "Legal 500",
                                                    gsub("Tier ", "", ranking),
                                                    gsub("Band ", "", ranking)

@@ -17,21 +17,21 @@ choose_publisher <- function(publisher){
 publisher <- "Chambers and Partners"
 
 # db creds ----------------------------------------------------------------
-pwd <- read.csv("~/Documents/projects/pwd/pwd.txt", header = F, stringsAsFactors = F)
-db_usr <- pwd[[1]][1]
-db_pwd <- pwd[[1]][2]
-db_address <- pwd[[1]][3]
-db_name <- pwd[[1]][4]
-
-conn <-
-  RMySQL::dbConnect(
-    drv = MySQL(),
-    username = db_usr,
-    password = db_pwd,
-    host = db_address,
-    dbname = db_name,
-    port = 3306
-  )
+# pwd <- read.csv("~/Documents/projects/pwd/pwd.txt", header = F, stringsAsFactors = F)
+# db_usr <- pwd[[1]][1]
+# db_pwd <- pwd[[1]][2]
+# db_address <- pwd[[1]][3]
+# db_name <- pwd[[1]][4]
+# 
+# conn <-
+#   RMySQL::dbConnect(
+#     drv = MySQL(),
+#     username = db_usr,
+#     password = db_pwd,
+#     host = db_address,
+#     dbname = db_name,
+#     port = 3306
+#   )
 
 # constants ---------------------------------------------------------------
 
