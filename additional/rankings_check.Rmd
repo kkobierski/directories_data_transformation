@@ -1,0 +1,118 @@
+---
+title: "Guide comparison year to year"
+output: 
+  html_document
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+# setwd("C:/Users/kobiersk/Documents/projects/directories_data_transformation")
+source("C:/Users/kobiersk/Documents/projects/directories_data_transformation/load_packages.R")
+library("kableExtra")
+library("tidyr")
+library("pander")
+
+guide_to_select <- "Chambers Global"
+current_year <- year(Sys.Date())
+cutoff_year <- current_year - 3
+firms_list <-
+  c(
+    "Baker McKenzie",
+    "Dentons",
+    "CMS",
+    "DLA Piper",
+    "Hogan Lovells",
+    "Norton Rose Fulbright",
+    "Clifford Chance",
+    "Eversheds Sutherland"
+  )
+
+
+df_historical_rankings <- read.table(file = "C:/Users/kobiersk/Documents/Directories/df_final_firm.csv", 
+                                     sep = ";",
+                                     stringsAsFactors = F,
+                                     header = T)
+
+
+df_data <- df_historical_rankings %>% filter(guide_agg == guide_to_select, Year.published >= cutoff_year)
+
+```
+
+## Summary year to year
+```{r slide 0}
+temp <- df_data %>% group_by(Guide) %>% summarize(n = n())
+temp %>% kable() %>% kable_styling()
+```
+
+## Total number of rankings
+
+-----------------------------------
+
+```{r slide1}
+temp <- df_data %>% group_by(Guide, Level, Is.part.of.Dentons) %>% summarise(n = n())
+temp <- tidyr::spread(temp, Guide, n) %>% arrange(desc(`Is.part.of.Dentons`))
+
+colnames(temp) <- gsub("\\.", " ", colnames(temp))
+
+temp %>% kable() %>% kable_styling()
+
+```
+
+## Firms results
+```{r slide2}
+temp <- df_data %>% filter(Firm.agg %in% firms_list) %>%  group_by(Firm.agg, Guide, Level) %>% summarise(n = n())
+temp <- tidyr::spread(temp, Guide, n) %>% arrange(desc(Firm.agg))
+
+colnames(temp) <- gsub("\\.", " ", colnames(temp))
+
+temp %>% kable() %>% kable_styling()
+
+```
+
+
+## Dentons practice results
+
+
+### Firm level
+```{r slide 3}
+temp <- df_data %>% filter(Is.part.of.Dentons == "Yes", Level == "Firm level") %>%  group_by(Dentons.practice, Guide, Level) %>% summarise(n = n())
+temp <- tidyr::spread(temp, Guide, n) %>% arrange(Dentons.practice)
+
+colnames(temp) <- gsub("\\.", " ", colnames(temp))
+
+temp %>% kable() %>% kable_styling()
+```
+
+
+### Individual level
+```{r slide 4}
+temp <- df_data %>% filter(Is.part.of.Dentons == "Yes", Level == "Individual level") %>%  group_by(Dentons.practice, Guide, Level) %>% summarise(n = n())
+temp <- tidyr::spread(temp, Guide, n) %>% arrange(Dentons.practice)
+
+colnames(temp) <- gsub("\\.", " ", colnames(temp))
+
+temp %>% kable() %>% kable_styling()
+```
+
+
+## Dentons practice results - TOP rankings
+
+
+### Firm level
+```{r slide 5}
+temp <- df_data %>% filter(Is.part.of.Dentons == "Yes", Level == "Firm level", Is.top.ranking == "Yes") %>%  group_by(Dentons.practice, Guide, Level) %>% summarise(n = n())
+temp <- tidyr::spread(temp, Guide, n) %>% arrange(Dentons.practice)
+
+colnames(temp) <- gsub("\\.", " ", colnames(temp))
+
+temp %>% kable() %>% kable_styling()
+```
+### Individual level
+```{r slide 6}
+temp <- df_data %>% filter(Is.part.of.Dentons == "Yes", Level == "Individual level", Is.top.ranking == "Yes") %>%  group_by(Dentons.practice, Guide, Level) %>% summarise(n = n())
+temp <- tidyr::spread(temp, Guide, n) %>% arrange(Dentons.practice)
+
+colnames(temp) <- gsub("\\.", " ", colnames(temp))
+
+temp %>% kable() %>% kable_styling()
