@@ -130,11 +130,12 @@ year_published_dict <- c(
   'Chambers Latin America',
   'Chambers Asia',
   'Chambers Asia Pacific',
-  'Chambers FinTech',
+  #'Chambers FinTech',
   'Chambers Canada',
   'Legal 500 Canada',
   'Legal 500 Asia',
-  'Legal 500 UK'
+  'Legal 500 UK',
+  'Legal 500 Asia Pacific'
 )
 
 columns_list_csv <- c(
