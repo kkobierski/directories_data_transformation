@@ -1,0 +1,96 @@
+The puprose of these scripts is to clean and transform rankings data coming from Chambers and Partners or Legal 500.
+
+run
+This script launches other scripts in sequence and generates final data frame with new data added.
+
+load_packages
+Loads necessary packages
+
+settings
+Creates various variables and functions necessary for further data transfomation e.g.
+- db connection ( necessary only if you are using database)
+- list of firms being part of dentons
+- list of firms being competitiors
+- list of guides that has year different than year_published
+- column names for final dataframe
+- field type (necessary only if you inserting into database)
+- list of top rankings
+- few cleaning functions
+
+get_data
+Imports historical rankings data and dictionaries neccessary for matching regions and practices.
+
+choose_publisher - function
+Function that specifies weather the new data comes from Legal500 or Chambers and Partners and respecively sources scripst modifying values from specified publisher. Values:
+"l" - Legla500
+"c" - Chambers
+
+match_practices
+Adds Dentons practcice and sector groups to new records. Spits out *.csv with unmatched records.
+
+match_regions
+Adds Dentons regions to new records. Spits out *.csv with unmatched records.
+
+add_extra_columns
+Add new columns which are derivative of existing ones, and modifies some of the exising ones:
+- modifies year_published for som eguides (mentioned in settings)
+- adds flag "level" to mark weather record is firm or lawyer ranking
+- adds column ranking_aggregated
+- adds column with aggregated names of the firms (firm_agg)
+- adds flag "is_top_ranking" - marking all top level rankings
+- adds flag "special_ranking" - marking all special / top level rankings in Chambers
+
+add_historical_rankings
+Binds historical rankings with new data. Adds two more comuns:
+- guide_agg - aggregated name of the guide e.g. "Chambers Global", by removing year from its name
+- adds flag marking current rankings (is_ranking_current)
+
+save_to_csv
+Sets column names for outcome cvs and saves it.
+
+PROCESSING CHAMBERS DATA
+
+get_chambers
+Reads new Chambers data from *.csv
+
+correct_chambers_columns
+Transforms raw data into form that will allow further processing
+- removing empty rows
+- matches guide name from dictionary
+- matches firm names from dictionary
+- creates columns form raw data:
+  year,
+  firm_name,
+  publisher,
+  guide,
+  guide_agg,
+  directory_practice,
+  directory_region,
+  ranking,
+  lawyer_name,
+  is_part_of_dentons
+
+
+PROCESSING LEGAL500 DATA
+
+get_legal500
+Reads new Legal data from *.csv and modifies columns names
+
+correct_legal_columns
+Sets publisher and guide name -> need to be set manually
+Selects columns form raw data and renames them:
+ year,
+ firm_name,
+ publisher,
+ guide,
+ guide_agg,
+ directory_practice,
+ directory_region,
+ ranking,
+ lawyer_name,
+ is_part_of_dentons 
+
+Selects only desired firms form entires set (specifies in settings)
+
+
+
