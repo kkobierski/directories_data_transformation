@@ -1,3 +1,6 @@
+# df_historical_rankings$year <- as.integer(df_historical_rankings$year)
+# df_historical_rankings$year_published <- as.integer(df_historical_rankings$year_published)
+
 df_data <- dplyr::bind_rows(df_historical_rankings, df_data)
 
 df_data <-
