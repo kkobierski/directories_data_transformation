@@ -1,5 +1,5 @@
 publisher <- "Legal 500"
-guide_agg <- "Legal 500 UK"
+guide_agg <- "Legal 500 Asia Pacific"
 
 colnames(df_legal_raw) <-
   gsub("table_type.*", "table_type", colnames(df_legal_raw))
@@ -17,7 +17,7 @@ df_data <-
     publisher = publisher,
     guide_agg = guide_agg,
     guide = paste0(guide_agg, " ", year),
-    directory_region = chapter,
+    directory_region = country,
     ranking = if_else(
       table_type == "Recommended firms",
       paste0("Tier ", legal_500_tier_ranking),
