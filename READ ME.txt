@@ -40,6 +40,12 @@ Add new columns which are derivative of existing ones, and modifies some of the 
 - adds flag "is_top_ranking" - marking all top level rankings
 - adds flag "special_ranking" - marking all special / top level rankings in Chambers
 
+cleaning_names
+Has a set of rules used to mainain consistency of lawyers naming between publishers and guides
+First thera are general rules that strips titles, locations, practices and other undesired sufixes. 
+Second part are detailed cases of specific lawyers of each firm.
+Still needs to be developed.
+
 add_historical_rankings
 Binds historical rankings with new data. Adds two more comuns:
 - guide_agg - aggregated name of the guide e.g. "Chambers Global", by removing year from its name

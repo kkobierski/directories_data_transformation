@@ -1,7 +1,9 @@
 # titles
 df_data$lawyer_name <- gsub(", Ad E", "", df_data$lawyer_name)
 df_data$lawyer_name <- gsub(" Ad E", "", df_data$lawyer_name)
+df_data$lawyer_name <- gsub(", SC", "", df_data$lawyer_name)
 df_data$lawyer_name <- gsub(" SC", "", df_data$lawyer_name)
+df_data$lawyer_name <- gsub(", QC", "", df_data$lawyer_name)
 df_data$lawyer_name <- gsub(" QC", "", df_data$lawyer_name)
 
 
@@ -73,11 +75,16 @@ df_data$lawyer_name <- gsub("Tan Joo Thye", "Joo Thye Tan", df_data$lawyer_name)
 df_data$lawyer_name <- gsub("Alexander.*Korobeinikov", "Alexander V Korobeinikov", df_data$lawyer_name)
 df_data$lawyer_name <- gsub("Alvaro Gutierrez", "Alvaro Gutierrez Bendezu", df_data$lawyer_name)
 df_data$lawyer_name <- gsub("Alvira.*Wahjosoedibjo", "Alvira Wahjosoedibjo", df_data$lawyer_name)
+df_data$lawyer_name <- gsub("Alejandro.*Valls", "Alejandro Valls", df_data$lawyer_name)
+df_data$lawyer_name <- gsub("Alfonso Garcia.*Lozano", "Alfonso Garcia", df_data$lawyer_name)
+df_data$lawyer_name <- gsub("Joseph.*Fu", "Joseph Fu", df_data$lawyer_name)
+df_data$lawyer_name <- gsub("Chris.*Hogan", "Christopher Hogan", df_data$lawyer_name)
 df_data$lawyer_name <- gsub("", "", df_data$lawyer_name)
 df_data$lawyer_name <- gsub("", "", df_data$lawyer_name)
 df_data$lawyer_name <- gsub("", "", df_data$lawyer_name)
-df_data$lawyer_name <- gsub("", "", df_data$lawyer_name)
-df_data$lawyer_name <- gsub("", "", df_data$lawyer_name)
+
+#Norton Rose Fulbright
+df_data$lawyer_name <- gsub("Nic.*Grandage", "Nicholas Grandage", df_data$lawyer_name)
 
 
 
